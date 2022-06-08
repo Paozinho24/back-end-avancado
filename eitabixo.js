@@ -124,11 +124,72 @@ console.log(lista)
 //object literals - estruturas que descrevem entidades
 
 const produto = {
-    nome : "VIBRADOR Hulk Esmaga",
+    nome : "BONECO Hulk Esmaga",
     preco: 250.0 ,
-    estoque: true ,
+    emEstoque: true ,
     size: ['70 cm ' , '120cm' , '30cm ' , '10cm'],
     'cor' : 'verde' 
 }
 
 console.log(produto['cor'])
+
+//destructuring - recurso para objetos para extrair contéudo de dentro deles
+
+const {preco, emEstoque} = produto 
+console.log(preco)
+console.log(emEstoque)
+
+
+const [char1, char2 ] = lista 
+console.log(char1)
+console.log(char2)
+
+
+//JSON - JavaScript Object Notation
+    const cachorroDoKevin = {
+        nome : 'Duke',
+        idade : 20,
+
+    }
+
+const json = JSON.stringify(cachorroDoKevin)
+console.log(json)
+console.log(typeof json)
+const json2 = JSON.parse(json)
+console.log(json2)
+console.log(typeof json2)
+const jsonErrado = JSON.stringify('{"nome":"Duke","idade":20}')
+console.log(jsonErrado)
+
+
+console.log("-----------------------------------------------------------------------")
+console.log("+DESAFIO+")
+
+//Desafio 1
+
+//criando o vetor
+
+const vetorDesafio = [24, 48, 19 , 30 , 29]
+
+//criando o objeto 
+
+const objectDesafio = {
+
+    n1 : vetorDesafio [0] , 
+    n2 : vetorDesafio [1] ,
+    n3 : vetorDesafio [2] , 
+    n4 : vetorDesafio [3] ,
+    n5 : vetorDesafio [4] ,
+}
+
+//utilizando o destruction 
+const {n1 , n2 , n3 , n4 , n5} = vetorDesafio
+
+//criando o JSON
+
+const jsonDesafio = JSON.stringify(objectDesafio)
+
+//imprimento o resultado
+console.log(jsonDesafio)
+console.log(vetorDesafio)
+console.log(objectDesafio)

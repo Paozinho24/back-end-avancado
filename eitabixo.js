@@ -124,11 +124,11 @@ console.log(lista)
 //object literals - estruturas que descrevem entidades
 
 const produto = {
-    nome : "VIBRADOR",
+    nome : "VIBRADOR Hulk Esmaga",
     preco: 250.0 ,
     estoque: true ,
-    size: ['70 cm ' , '120cm' , '30cm ' , '10cm']
+    size: ['70 cm ' , '120cm' , '30cm ' , '10cm'],
+    'cor' : 'verde' 
 }
 
-produto.nome
-produto['nome']
+console.log(produto['cor'])

@@ -124,7 +124,7 @@ console.log(lista)
 //object literals - estruturas que descrevem entidades
 
 const produto = {
-    nome : "BONECO Hulk Esmaga",
+    nome : "VIBRADOR Hulk Esmaga",
     preco: 250.0 ,
     emEstoque: true ,
     size: ['70 cm ' , '120cm' , '30cm ' , '10cm'],
@@ -183,13 +183,141 @@ const objectDesafio = {
 }
 
 //utilizando o destruction 
-const {n1 , n2 , n3 , n4 , n5} = vetorDesafio
+const {n1 , n2 , n3 , n4 , n5} = vetorDesafio 
 
 //criando o JSON
 
 const jsonDesafio = JSON.stringify(objectDesafio)
 
-//imprimento o resultado
+//imprimir o resultado
 console.log(jsonDesafio)
 console.log(vetorDesafio)
 console.log(objectDesafio)
+
+
+//Desafio 2
+
+const RSO   = n1 + n4
+const RMULT = n1 * n2
+const RDIVI = n3 / n4
+const RSUB  = n4 - n1
+
+const ObjectCalculadora = {
+    multiplicacao : RSO ,
+    divisao       : RSUB ,
+    soma          : RDIVI , 
+    subtracao     : RMULT , 
+
+}
+
+const jsonCalculadora = JSON.stringify(ObjectCalculadora)
+
+// imprimir o resultado 
+console.log(ObjectCalculadora)
+console.log(jsonCalculadora)
+console.log(typeof n2)
+
+
+//Solução do professor 
+
+const vetor = [1,2,3,4,5]
+const objeto = {
+
+    n1a : vetor[0], 
+    n2a : vetor[1],
+    n3a : vetor[2],
+    n4a : vetor[3],
+    n5a : vetor[4],
+}
+
+const {n1a , n2a, n3a , n4a, n5a} = objeto
+
+const jsonVetor = JSON.stringify({n1a,n2a,n3a,n4a,n5a})
+
+console.log(jsonVetor)
+console.log(objeto)
+
+
+//seguindo o básico do professor
+
+const n = 24
+if (n == 24) {
+    console.log('É GAY')
+}else{
+    console.log('É HETERO')
+}
+
+const texto = "PICANHA"
+
+if(texto == "SEXO"){
+    console.log("EITA BIXO TÃO FALANDO DE SEXO")
+}else{ 
+    console.log("Droga não era sexo")
+}
+
+
+//operador ternario 
+
+const resultado = n > 20 ? true :  false 
+console.log(resultado)
+console.log(typeof resultado)
+
+//repetição : precisa de 3 partes - variável de controle e a inicialização dela ; condição/critério de parada; alteração do valor da variaável de controle
+
+
+let contador = 0 
+while (contador <= 10){
+    console.log(contador)
+    contador++ // contador = contador + 1 
+
+}
+
+const lista2 = [1, 2, 3, 4, 5, 6]
+while (contador < lista2.length){
+    console.log('AAAAAAAAAAAAAA'+ lista[contador] + ' PORA')
+  //  console.log(lista2[contador])
+    contador++ 
+
+
+}
+
+const outralista = ['a' , 'b' , 'c' , 'd' , 'e' , 'f']
+for (let contador = 0 ; contador < outralista.length ; contador ++){
+    console.log(`teste ${outralista[contador]}`) //template literais
+}
+
+
+//SEILA TO PERDIDO
+const nomes = ['Kaua' , 'Cleyciane' , 'Kevin' , 'Victor']
+nomes.forEach(function(nome){
+    console.log(nome)
+})
+
+const nomesModificados = nomes.map(function(nome){
+    if(nome === 'Kevin'){
+        return (nome = "GAY")
+    }else {
+        return nome
+    }
+
+})
+
+nomesModificados.forEach(function(nome){
+
+    console.log(nome)
+
+})
+
+const numerosGrandes = ['6' , '1' , '9', '17' , '99' , '94'].filter(function(numero){
+    return (numero > 10)
+})
+
+numerosGrandes.forEach(function(numero){
+    console.log(numero)
+})
+
+console.log(numerosGrandes.reduce(function(total,numero){
+    return parseInt(total) + parseInt(numero)
+}))
+
+

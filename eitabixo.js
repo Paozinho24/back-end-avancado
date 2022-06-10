@@ -321,3 +321,46 @@ console.log(numerosGrandes.reduce(function(total,numero){
 }))
 
 
+//Funções ETA
+
+
+function funcaoSexo(frase1 , frase2){
+    console.log(typeof frase1)
+    return (`nome completo é ${frase1}${frase2}.`)
+}
+
+console.log(funcaoSexo('VONTADE DE ', 'MORRER'))
+
+const soma = (a,b) => a+b
+
+console.log(soma(5,3))
+
+const lista3 = ['a', 'b', 'c', 'd']
+
+console.log(lista3.map((elemento) => {
+
+    return elemento.length
+
+
+}))
+console.log("-----------------------------------------------------------------------")
+let x2 = 14
+function fora(){ 
+    let x2 = 30 
+    function somaMais5(){
+        return x2+5
+    }
+    return somaMais5()
+}
+console.log(fora())
+
+
+console.log("-----------------------------------------------------------------------") 
+
+
+let xDesafio = 10
+
+const fora2 = () =>  (() => xDesafio+5) ()
+
+console.log(fora2())
+console.log(typeof fora2)

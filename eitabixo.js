@@ -57,7 +57,7 @@ console.log(typeof vouf)
 
 //Array
 
-const eitabixovetor = ['java', 'C', 'Comi tua mae', 'Kevin é gay']
+const eitabixovetor = ['java', 'C', 'kkakakak', 'Kevin é gay']
 console.log(eitabixovetor)
 console.log(typeof eitabixovetor)
 
@@ -249,10 +249,10 @@ if (n == 24) {
 
 const texto = "PICANHA"
 
-if(texto == "SEXO"){
-    console.log("EITA BIXO TÃO FALANDO DE SEXO")
+if(texto == "PAO?"){
+    console.log("EITA BIXO TÃO FALANDO DE PAO?")
 }else{ 
-    console.log("Droga não era sexo")
+    console.log("Droga não era PAO?")
 }
 
 
@@ -331,7 +331,7 @@ function funcaoSexo(frase1 , frase2){
 
 console.log(funcaoSexo('VONTADE DE ', 'MORRER'))
 
-const soma = (a,b) => a+b
+const soma = (a,b) => a+b //Funçoes arrow 
 
 console.log(soma(5,3))
 
@@ -364,3 +364,27 @@ const fora2 = () =>  (() => xDesafio+5) ()
 
 console.log(fora2())
 console.log(typeof fora2)
+
+
+//Orientação a objetos
+
+class Produto { 
+    constructor (nomeProd, precoProd, idProd) {
+        this.nomeProd = nomeProd
+        this.precoProd = precoProd
+        this.idProd = idProd
+    }
+    detalheDoProduto (){
+        return `O preco do produto  ${this.nomeProd} é ${this.precoProd} pontos de ouro`
+    }
+}
+
+const elixir = new Produto('Elixir de Ruteffor' , 20.99 , 1)
+console.log(elixir)
+console.log(typeof elixir)
+
+console.log(elixir.detalheDoProduto())
+
+const espadaDeAco = new Produto('Espada de Aço negro' , 400 , 2)
+console.log(espadaDeAco.detalheDoProduto())
+

@@ -2,8 +2,8 @@ console.log("Hello MOTO")
 
 
 //Declarando variaveis HAHAHAHAHHA
-    var x = 10 //Essa variável é do tipo Number
-//Formas mais convenientes de declarar 
+var x = 10 //Essa variável é do tipo Number
+ //Formas mais convenientes de declarar 
 let y = 24 
 
 const z = ''
@@ -22,7 +22,7 @@ if(true){
 
 console.log(y)
 
-//tipos de cornos
+//tipos de cornos, no caso as tipos de variaveis
 
 
 const nome = "kevin gay"
@@ -64,7 +64,7 @@ console.log(typeof eitabixovetor)
 console.log(eitabixovetor.length)
 
 
-console.log("--------------------------------------------------------------------")
+console.log("--------------------------------------------------------------------") //  Para deixa o codigo mais arrumado 
 
 
 //object literals
@@ -287,7 +287,7 @@ for (let contador = 0 ; contador < outralista.length ; contador ++){
 }
 
 
-//SEILA TO PERDIDO
+//SEILA TO PERDIDO, aqui é sobre a função forEach (pesquisar depois)
 const nomes = ['Kaua' , 'Cleyciane' , 'Kevin' , 'Victor']
 nomes.forEach(function(nome){
     console.log(nome)
@@ -343,7 +343,12 @@ console.log(lista3.map((elemento) => {
 
 
 }))
+
+//coisa para organizar 
 console.log("-----------------------------------------------------------------------")
+
+
+
 let x2 = 14
 function fora(){ 
     let x2 = 30 
@@ -366,7 +371,7 @@ console.log(fora2())
 console.log(typeof fora2)
 
 
-//Orientação a objetos
+//Orientação a objetos, sdds de mexer com isso 
 
 class Produto { 
     constructor (nomeProd, precoProd, idProd) {
@@ -375,7 +380,7 @@ class Produto {
         this.idProd = idProd
     }
     detalheDoProduto (){
-        return `O preco do produto  ${this.nomeProd} é ${this.precoProd} pontos de ouro`
+        return `O preco do item  ${this.nomeProd} é ${this.precoProd} pontos de ouro .`
     }
 }
 
@@ -388,3 +393,57 @@ console.log(elixir.detalheDoProduto())
 const espadaDeAco = new Produto('Espada de Aço negro' , 400 , 2)
 console.log(espadaDeAco.detalheDoProduto())
 
+//Herença (fiz algumas referencias a d&d)
+
+class ProdutoComRaridade extends Produto { 
+    constructor(nomeProd, precoProd, RaridadeProd){
+        super(nomeProd,precoProd)
+        this.RaridadeProd = RaridadeProd
+    }
+    outraMensagem(adjetivo){
+        return `O item ${this.nomeProd} é ${adjetivo}`
+    }
+}   
+
+const cristalAmaudicoado = new Produto('Crista de Rubi - Amaudiçoado' , 0 )
+
+console.log(cristalAmaudicoado.detalheDoProduto())
+//essa bagaça não ta funcionando verificar (conserta depois)
+//console.log(cristalAmaudicoado.outraMensagem()) 
+
+//DOM - Document Object Model
+
+const titulo = document.getElementById('titulo')
+console.log(titulo)
+
+//query selector
+
+const mesmoTitulo = document.querySelector('#titulo')
+console.log(mesmoTitulo)
+
+const todosOsParagrafos = document.querySelectorAll('.texto')
+console.log(todosOsParagrafos)
+
+todosOsParagrafos.forEach((textoParafrafo) => console.log(textoParafrafo.textContent.toUpperCase()))
+
+//manipulação 
+
+const textoAlterado = todosOsParagrafos[0].textContent
+console.log(textoAlterado)
+ 
+todosOsParagrafos[4].innerHTML = textoAlterado
+todosOsParagrafos[3].style.backgroudColor = 'red'
+todosOsParagrafos[2].classList.add('outra-class')
+todosOsParagrafos[1].classList.remove('texto')
+
+titulo.remove()
+
+todosOsParagrafos[0].remove()
+
+//eventos 
+
+const botao = document.getElementById('botao')
+
+botao.addEventListener('click', function(){
+    todosOsParagrafos[2].style.backgroundColor = 'red'
+})

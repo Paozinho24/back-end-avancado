@@ -53,15 +53,9 @@ function funcao(){
 
 function mostraData(){
   const data = new Date();
-  console.log('Hoje é: ' + data.getDay() + 'Hora: ' + data.getHours() + 'Minutos: ' + data.getMinutes() + 'Segundos: ' + data.getSeconds())
+  let Day = "14/06/22"
+  console.log('Hoje é: '+ Day + data.getDay() + ' - ' + data.getHours() + ' : ' + data.getMinutes() + ' : ' + data.getSeconds())
 }
 
-const primeiro = setTimeout(mostraData, 5000)
+setInterval(mostraData, 5000)
 
-const segundo = setTimeout(mostraData, 5000)
-
-const terceiro = setTimeout(mostraData, 5000)
-
-console.log(primeiro) 
-console.log(segundo)
-console.log(terceiro)

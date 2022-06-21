@@ -1,3 +1,5 @@
+
+/*
 console.log("Hello MOTO")
 
 
@@ -447,3 +449,105 @@ const botao = document.getElementById('botao')
 botao.addEventListener('click', function(){
     todosOsParagrafos[2].style.backgroundColor = 'red'
 })
+
+*/
+//Só queria está jogando halo 
+
+//JavaScript síncrono 
+
+function somar(){ // p.s  : Declarrar a função sucesso e erro aqui dentro para a outra forma 
+    const resultado = 1 + 1 
+    if ( resultado == 2 ){
+        sucesso()
+
+    }else { 
+        erro()
+    }
+
+}
+
+// somar(() => { console.log('Sucesso! A soma foi 2.')} , () => { console.log('A soma não foi 2. Você é um bosta')})
+
+function sucesso(){
+    console.log('Sucesso! A soma foi 2.')
+}
+
+function erro(){
+    console.log('A soma não foi 2. Você é um bosta')
+
+}
+
+somar()
+
+
+// Promises são classes em JavaScript. Métodos: then e catch
+
+
+const p = new Promise((resolve , reject) => {
+    const resultado1 = 1 + 1 
+    if(resultado1 === 2 ) resolve('Sucesso! A soma foi 2') 
+    else reject('A soma não foi 2.Alguma coisa deu errado...')
+
+})
+
+p
+    .then((mensagem) => {console.log('Isso que tá dentro do then: ' + mensagem)})
+    .catch((mensagem) => {console.log('Isso está dentro do catch' + mensagem)})
+
+console.log(p)
+
+console.log("teste")
+
+
+console.log('----------------------------------------------')
+
+//callback
+
+/*const melhorProgramador = 'GAUA'
+
+function quemEhMelhor (callback, callbackErro) { 
+    if(melhorProgramador === 'GAUA'){
+        callback({
+            nome : melhorProgramador , 
+            mensagem : "QUE IR TOMAR UMA BREJA COM MEU AMIGO MARCELO"
+        })
+    }else {
+        callbackErro({
+            mensagem1 : 'QUERO IR PARA CASA' ,
+            mensagem2 : 'OQUE UM HOMEM PRECISA FAZER PARA JOGAR HALO'
+        })
+    }
+
+}
+
+quemEhMelhor(
+    (resultado1) => {console.log(resultado1.nome + resultado1.mensagem)},
+    (erro) => {console.log(erro.mensagem1 + melhorProgramador + erro.mensagem2)}
+)
+
+*/
+
+
+const melhorProgramador = 'GAUA'
+
+function quemEhMelhor () { 
+    return new Promise((resolve, reject) => {
+    if(melhorProgramador === 'GAUA'){
+        resolve({
+            nome : melhorProgramador , 
+            mensagem : "QUE IR TOMAR UMA BREJA COM MEU AMIGO MARCELO"
+        })
+    }else {
+        reject({
+            mensagem1 : 'QUERO IR PARA CASA' ,
+            mensagem2 : 'OQUE UM HOMEM PRECISA FAZER PARA JOGAR HALO'
+        })
+      }
+    })
+}
+
+quemEhMelhor()
+
+    .then((resultado1) => {console.log(resultado1.nome + resultado1.mensagem) })
+
+    .catch((erro) => {console.log(erro.mensagem1 + melhorProgramador + erro.mensagem2) })
